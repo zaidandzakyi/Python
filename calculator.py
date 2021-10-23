@@ -44,11 +44,15 @@ while loop:
         else :
             break
     elif data2 == "/":
-        value = data / data3
-        print("Value : ",value)
-        user_input = input("\nwanna try again ? yes/no : ")
-        if user_input == "yes":
-            continue
-        else :
+        try:
+            value = data / data3
+            print("Value : ",value)
+            user_input = input("\nwanna try again ? yes/no : ")
+            if user_input == "yes":
+                continue
+            else :
+                break
+        except ZeroDivisionError:
+            print("Data invalid")
             break
 print("\nCalculator End...")
