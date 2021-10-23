@@ -23,14 +23,14 @@ def start():
 
 def heal():
     player["Health"] += 30
-    print("\nNow yourhealth : ",player["Health"])
+    print("\n> Healing,Now yourhealth : ",player["Health"])
     c_input()
     check()
     
 
 def attack():
     computer["health"] -= player["attack"]
-    print("\nAttacking, computer health : ",computer["health"])
+    print("\n> Attacking, computer health : ",computer["health"])
     c_input()
     check()
     
@@ -42,16 +42,19 @@ def stats():
 
 def powerup():
     player["attack"] += 30
-    print("\nNow your Attack : ",player["attack"])
+    print("\n> Power up, Now your Attack : ",player["attack"])
     c_input()
     check()
     
 def check():
-    if player["Health"] < 0:
-        print("\nyou lose :(") 
+    if player["Health"] <= 0 and computer["health"] > 0:
+        print("\nyou lose :( ...") 
         quit()
-    if computer["health"] < 0:
-        print("\nyou win :) ,good job,see you next time")
+    elif computer["health"] <= 0 and player["Health"] > 0:
+        print("\nyou win :) ... ,good job,see you next time")
+        quit()
+    elif player["Health"] <= 0 and computer["health"] <= 0:
+        print("\nThe fight Draw :| ...")
         quit()
     else :
         start()
@@ -61,13 +64,13 @@ def c_input():
     computer_pick = options[random_numbers]
     if computer_pick == "attack":
         player["Health"] -= computer["attack"]
-        print("computer attack, player health : ",player["Health"])
+        print("> computer attack, player health : ",player["Health"])
     elif computer_pick == "heal":
         computer["health"] += 30
-        print("computer heal,computer health : ",computer["health"])
+        print("> computer heal,computer health : ",computer["health"])
     elif computer_pick == "powerup":
         computer["attack"] += 30
-        print("computer power up,computer Attack : ",computer["attack"])
+        print("> computer power up,computer Attack : ",computer["attack"])
 
 def exit():
     print("\nThank You for playing,Goodbye.....")
