@@ -22,7 +22,7 @@ def start():
         exit()
 
 def heal():
-    player["Health"] += 30
+    player["Health"] += 50
     print("\n> Healing,Now yourhealth : ",player["Health"])
     c_input()
     check()
@@ -66,7 +66,7 @@ def c_input():
         player["Health"] -= computer["attack"]
         print("> computer attack, player health : ",player["Health"])
     elif computer_pick == "heal":
-        computer["health"] += 30
+        computer["health"] += 50
         print("> computer heal,computer health : ",computer["health"])
     elif computer_pick == "powerup":
         computer["attack"] += 30
