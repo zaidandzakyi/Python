@@ -21,7 +21,7 @@ while loop:
         break
     if data2 == "+":
         value = data + data3
-        print("Value : ",value)
+        print(f"Value : {value}")
         user_input = input("\nwanna try again ? yes/no : ")
         if user_input == "yes":
             continue
@@ -29,7 +29,7 @@ while loop:
             break
     elif data2 == "-":
         value = data - data3
-        print("Value : ",value)
+        print(f"Value : {value}")
         user_input = input("\nwanna try again ? yes/no : ")
         if user_input == "yes":
             continue
@@ -37,7 +37,7 @@ while loop:
             break
     elif data2 == "*":
         value = data * data3
-        print("Value : ",value)
+        print(f"Value : {value}")
         user_input = input("\nwanna try again ? yes/no : ")
         if user_input == "yes":
             continue
@@ -46,7 +46,7 @@ while loop:
     elif data2 == "/":
         try:
             value = data / data3
-            print("Value : ",value)
+            print(f"Value : {value}")
             user_input = input("\nwanna try again ? yes/no : ")
             if user_input == "yes":
                 continue
