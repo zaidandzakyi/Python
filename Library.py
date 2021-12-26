@@ -1,58 +1,6 @@
 #LIBRARY
 books = []
 
-def show():
-    index = 0
-    if len(books) <= 0:
-        print("\n>>> Library Still Empty ")
-    else :
-        print("\n/============\\")
-        print("| my library |".upper())
-        print("\\============/")
-        for book2 in books:
-            print(str(index) + ") " + book2)
-            index += 1
-        print("\n")
-def add(): 
-    bookName = input(">> Input Book Name : ")
-    books.append(bookName)
-    print(">>> Book successfully added :) ")
-
-def edit():
-    if len(books) <= 0:
-        print("\n>>> Library Still Empty ")
-        menu()
-    else:
-        show()
-        try:
-            index = int(input(">> Input the index : "))
-            oldBook = books[index]
-            newBook = input(">> New book name : ")
-            books[index] = newBook
-            print(">>> " + oldBook + ' had been changed to ' + newBook)
-        except ValueError:
-            print("!! Input the index !!")
-            edit()
-        except IndexError:
-            print("!! Wrong Index !!")
-            edit()
-def delete():
-    if len(books) <= 0:
-        print("\n>>> Library Still Empty ")
-        menu()
-    else:
-        show()
-        try:
-            index = int(input(">> Input The Index : "))
-            bookName = books[index]
-            del books[index]
-            print(">>> " + bookName + " had been deleted")
-        except ValueError:
-            print("!! Input the index !!")
-            delete()
-        except IndexError:
-            print("!! Wrong Index !!")
-            delete()
 def menu():
     print("\n======================")
     print("|     Library app    |".upper())
@@ -78,6 +26,62 @@ def menu():
         quit()
     else :
         print("!! Wrong Number !!")
+
+def show():
+    index = 0
+    if len(books) <= 0:
+        print("\n>>> Library Still Empty ")
+    else :
+        print("\n/============\\")
+        print("| my library |".upper())
+        print("\\============/")
+        for book2 in books:
+            print(str(index) + ") " + book2)
+            index += 1
+        print("\n")
+
+def add(): 
+    bookName = input(">> Input Book Name : ")
+    books.append(bookName)
+    print(">>> Book successfully added :) ")
+
+
+def edit():
+    if len(books) <= 0:
+        print("\n>>> Library Still Empty ")
+        menu()
+    else:
+        show()
+        try:
+            index = int(input(">> Input the index : "))
+            oldBook = books[index]
+            newBook = input(">> New book name : ")
+            books[index] = newBook
+            print(">>> " + oldBook + ' had been changed to ' + newBook)
+        except ValueError:
+            print("!! Input the index !!")
+            edit()
+        except IndexError:
+            print("!! Wrong Index !!")
+            edit()
+
+def delete():
+    if len(books) <= 0:
+        print("\n>>> Library Still Empty ")
+        menu()
+    else:
+        show()
+        try:
+            index = int(input(">> Input The Index : "))
+            bookName = books[index]
+            del books[index]
+            print(">>> " + bookName + " had been deleted")
+        except ValueError:
+            print("!! Input the index !!")
+            delete()
+        except IndexError:
+            print("!! Wrong Index !!")
+            delete()
 
 while True :
     menu()
