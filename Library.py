@@ -57,7 +57,7 @@ def edit():
             oldBook = books[index]
             newBook = input(">> New book name : ")
             books[index] = newBook
-            print(">>> " + oldBook + ' had been changed to ' + newBook)
+            print(">>> " + oldBook + ' has been changed to ' + newBook)
         except ValueError:
             print("!! Input the index !!")
             edit()
@@ -75,7 +75,7 @@ def delete():
             index = int(input(">> Input The Index : "))
             bookName = books[index]
             del books[index]
-            print(">>> " + bookName + " had been deleted")
+            print(">>> " + bookName + " has been deleted")
         except ValueError:
             print("!! Input the index !!")
             delete()
